@@ -1,0 +1,21 @@
+id: example-prompt-id
+name: Example Prompt Name
+category: analysis
+owner: team-or-person
+status: draft
+version: 1.0.0
+tags:
+  - example
+  - reusable
+use_cases:
+  - Beschreibe hier den primaeren Einsatzfall
+input_format: markdown
+output_format: markdown
+language: de
+model_compatibility:
+  - gpt-4.1
+  - gpt-5
+risk_notes:
+  - Unvollstaendige Eingaben fuehren zu unzuverlaessigen Ergebnissen.
+created_at: 2026-03-27
+updated_at: 2026-03-27
