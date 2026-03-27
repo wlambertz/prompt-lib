@@ -1,0 +1,7 @@
+interface:
+  display_name: "Prompt Librarian"
+  short_description: "Find the best prompt in this library"
+  default_prompt: "Use $find-prompt-in-library to search this prompt library for the most suitable prompt file for my task, and recommend authoring only if no good fit exists."
+
+policy:
+  allow_implicit_invocation: false
