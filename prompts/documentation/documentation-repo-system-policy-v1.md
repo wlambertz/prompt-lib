@@ -21,8 +21,6 @@ model_compatibility:
 risk_notes:
   - Can overgeneralize from weak repo signals unless assumptions are labeled explicitly.
   - May invent workflows or conventions if the repository is underdocumented and the prompt guardrails are ignored.
-created_at: 2026-03-27
-updated_at: 2026-03-27
 ---
 
 # Name
@@ -218,11 +216,3 @@ Policy risks:
 Help deliver safe, reviewable changes across backend, frontend, and docs while preserving release reliability.
 ...
 ```
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version

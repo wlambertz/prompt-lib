@@ -22,8 +22,6 @@ model_compatibility:
 risk_notes:
   - Can propose visually coherent but brand-inaccurate tokens if existing design constraints or brand rules are missing.
   - Text adjustments may improve clarity but still require human review for legal, compliance, localization, and domain-specific tone.
-created_at: 2026-03-27
-updated_at: 2026-03-27
 ---
 
 # Name
@@ -310,11 +308,3 @@ Do not overpromise activation timing. Keep the term invoice.
 ## Open risks
 - Activation wording may still need legal or support review depending on the payment flow.
 ```
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version

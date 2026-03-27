@@ -22,8 +22,6 @@ model_compatibility:
 risk_notes:
   - Can produce misleading commit messages if the provided diff or change summary is incomplete.
   - Should not force Conventional Commits when the repository uses a different established convention.
-created_at: 2026-03-27
-updated_at: 2026-03-27
 ---
 
 # Name
@@ -240,11 +238,3 @@ none
 ## Optional alternatives
 - `Correct billing empty-state rendering for empty invoices`
 ````
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version

@@ -22,8 +22,6 @@ model_compatibility:
 risk_notes:
   - Can overstate repo conventions or commands if repository evidence is weak and the prompt guardrails are ignored.
   - Generated AGENTS.md files still require human review for safety-sensitive boundaries such as deployments, secrets, and migrations.
-created_at: 2026-03-27
-updated_at: 2026-03-27
 ---
 
 # Name
@@ -298,11 +296,3 @@ Then create:
 - scoped nested files with local commands, risk boundaries, and subtree-specific do-not rules
 - `AGENTS_AUDIT.md` documenting evidence, commands, assumptions, and risks
 ```
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version

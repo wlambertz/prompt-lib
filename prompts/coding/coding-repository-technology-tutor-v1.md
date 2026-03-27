@@ -22,8 +22,6 @@ model_compatibility:
 risk_notes:
   - Can misidentify the stack if the repository context is incomplete or outdated.
   - External documentation links still need human verification when package versions or framework variants are ambiguous.
-created_at: 2026-03-27
-updated_at: 2026-03-27
 ---
 
 # Name
@@ -269,11 +267,3 @@ Spring Boot owns application startup, dependency wiring, and backend runtime beh
 - https://www.postgresql.org/docs/
 - https://developer.hashicorp.com/terraform/docs
 ```
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version

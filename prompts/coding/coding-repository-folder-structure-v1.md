@@ -22,8 +22,6 @@ model_compatibility:
 risk_notes:
   - Can produce an overengineered structure if the project scope, team size, or deployment model is not clarified first.
   - Suggested directories still need human validation against actual tooling, compliance, and hosting constraints.
-created_at: 2026-03-27
-updated_at: 2026-03-27
 ---
 
 # Name
@@ -228,11 +226,3 @@ repo/
 - `infra/` isolates infrastructure definitions and operational assets
 ...
 ```
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version

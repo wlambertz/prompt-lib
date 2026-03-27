@@ -90,11 +90,3 @@ Beschreibe die gewuenschte Ausgabe moeglichst konkret, zum Beispiel:
 ```text
 {{example_output}}
 ```
-
-## Version
-
-`1.0.0`
-
-## Aenderungsverlauf
-
-- `1.0.0` Initiale Version
