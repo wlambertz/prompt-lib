@@ -1,17 +1,23 @@
 ---
 name: add-prompt-to-library
-description: Curate and add prompts to this prompt library. Use when the user wants to check whether a prompt already exists, decide if a prompt belongs in the library, propose category and filename, or scaffold a new prompt entry in the right location.
+description: Curate candidate prompt entries for this prompt library. Use when the user wants a prompt brief or draft reviewed for duplication risk, library fit, final category, final filename, final location, and an add-versus-extend-versus-reject decision. Do not use to invent a new reusable prompt from a vague idea; use $draft-prompt-for-library first for authoring and iteration.
 ---
 
 # Add Prompt To Library
 
-Use this skill when the task is about curating a candidate prompt for this repository.
+Use this skill when the task is about curator review of a candidate prompt for this repository.
+
+This skill is the curator gate in a two-stage workflow:
+
+1. `$draft-prompt-for-library` authors or iterates the draft.
+2. `$add-prompt-to-library` decides whether the draft belongs in the library and where.
 
 This skill is for:
 
 - checking whether something similar already exists
 - deciding whether a new prompt should be added, merged into an existing entry, or rejected
-- proposing the best category, path, and filename
+- evaluating necessity, duplication risk, category fit, naming quality, and maintenance value
+- assigning the final category, path, and filename
 - scaffolding a new prompt file in `prompts/<category>/` when the user asked for addition and the prompt is worth adding
 
 This skill is not for:
@@ -19,6 +25,7 @@ This skill is not for:
 - broad repo cleanup unrelated to prompt curation
 - rewriting the library taxonomy or contribution rules unless the user explicitly asks
 - creating one-off prompts with no reusable value
+- inventing a fresh prompt from a raw or underspecified idea
 
 ## Required repo sources
 
@@ -52,7 +59,7 @@ Follow this sequence in order.
 
 ### 1. Normalize the candidate
 
-Turn the user request into a short prompt brief with:
+Turn the user request, prompt brief, or fresh draft into a short curator brief with:
 
 - working title
 - intended use case
@@ -62,6 +69,8 @@ Turn the user request into a short prompt brief with:
 - why it may be reusable
 
 If the request is underspecified, state the missing details explicitly in the assessment. Do not invent a fully mature prompt idea from a vague one-line hint.
+
+If the input is a fresh draft from `$draft-prompt-for-library`, treat the draft as a candidate artifact to review rather than as an approved library addition.
 
 ### 2. Search the library
 
@@ -107,6 +116,8 @@ Then propose:
 - the exact repository location
 - the exact filename
 
+These are final curator decisions, not tentative drafting suggestions.
+
 Filename format must follow:
 
 ```text
@@ -132,6 +143,7 @@ The curator pass is stricter than the primary pass. It checks:
 - naming quality
 - maintainability over time
 - whether the prompt adds enough reusable value to justify future review and upkeep
+- whether a fresh draft is strong enough to preserve as a long-lived library artifact
 
 Default behavior:
 
@@ -164,6 +176,7 @@ If the recommendation is `extend-existing`:
 - do not create a new file by default
 - name the target file to update
 - explain what should be merged into it
+- preserve the curator's final category and filename decision in the response
 
 If the recommendation is `reject`:
 

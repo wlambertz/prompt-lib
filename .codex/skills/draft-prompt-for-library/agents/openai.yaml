@@ -1,0 +1,7 @@
+interface:
+  display_name: "Draft Prompt For Library"
+  short_description: "Draft reusable prompt entries for the library"
+  default_prompt: "Use $draft-prompt-for-library to turn this prompt idea into a template-compliant draft for the library."
+
+policy:
+  allow_implicit_invocation: false

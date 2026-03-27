@@ -1,7 +1,7 @@
 interface:
   display_name: "Add Prompt To Library"
-  short_description: "Curate prompt ideas and scaffold high-value library entries"
-  default_prompt: "Use $add-prompt-to-library to check this prompt idea against the library, propose the best category and filename, and add it only if it clears the curation bar."
+  short_description: "Review prompt drafts for final library admission"
+  default_prompt: "Use $add-prompt-to-library to review this prompt draft against the library, make the add or extend or reject decision, and assign the final category and filename."
 
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
