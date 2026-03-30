@@ -3,13 +3,13 @@
 Prompt-Dateien werden nach einem einheitlichen Muster benannt:
 
 ```text
-<category>-<short-purpose>-v<major>.md
+<category>-<short-purpose>.md
 ```
 
 Beispiel:
 
 ```text
-documentation-api-changelog-v1.md
+documentation-api-changelog.md
 ```
 
 ## Regeln
@@ -20,7 +20,7 @@ documentation-api-changelog-v1.md
 - Der Name soll kurz, aber sprechend sein.
 - Die Dateiendung ist immer `.md`.
 - Die Kategorie muss einer gueltigen Hauptkategorie entsprechen.
-- Die Major-Version wird im Dateinamen als `v1`, `v2`, `v3` usw. gefuehrt.
+- Versionsangaben gehoeren nicht in den Dateinamen.
 
 ## Benennungslogik
 
@@ -28,13 +28,12 @@ Der Dateiname sollte in dieser Reihenfolge lesbar sein:
 
 1. Kategorie
 2. kurzer Zweck
-3. Major-Version
 
 Beispiele:
 
-- `analysis-risk-review-v1.md`
-- `coding-test-plan-v2.md`
-- `communication-release-update-v1.md`
+- `analysis-risk-review.md`
+- `coding-test-plan.md`
+- `communication-release-update.md`
 
 ## Was ein guter Name leistet
 
@@ -43,7 +42,7 @@ Ein guter Name:
 - beschreibt den primaeren Nutzen
 - ist auch ohne Oeffnen der Datei verstaendlich
 - grenzt sich von aehnlichen Prompts ab
-- bleibt auch bei spaeteren Varianten stabil
+- bleibt auch bei spaeteren Versionen stabil
 
 ## Was vermieden werden soll
 
@@ -56,6 +55,7 @@ Vermeide:
 
 ## Versionierungsregel
 
-- Kleinere inhaltliche Aenderungen aendern nicht den Dateinamen.
-- Wenn sich der Prompt grundlegend aendert, wird eine neue Major-Datei angelegt.
+- Inhaltliche Aenderungen aendern den Dateinamen nicht.
+- Grundlegende Aenderungen werden ueber die semantische Version und den Aenderungsverlauf nachverfolgt.
 - Die volle semantische Version wird im Dokumentinhalt und in den Metadaten gepflegt.
+- Parallele, inkompatible Varianten sollen nur als explizite Ausnahme und nicht als Standardkonvention angelegt werden.

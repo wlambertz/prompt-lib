@@ -97,7 +97,7 @@ Choose the best tentative category from:
 Then propose a tentative filename using:
 
 ```text
-<category>-<short-purpose>-v<major>.md
+<category>-<short-purpose>.md
 ```
 
 Treat both values as provisional until the curator skill confirms or changes them.
@@ -182,7 +182,7 @@ Use these defaults unless the user specifies otherwise:
 - `language: de` if the request is in German, otherwise match the request language
 - `owner`: use a clearly marked placeholder if no owner is given
 - `created_at` and `updated_at`: use the current date
-- derive `id` from the filename stem without `-v<major>` when possible
+- derive `id` from the filename stem
 
 ## Quality Bar
 

@@ -7,14 +7,14 @@ Dieses Repository ist eine kuratierte Bibliothek. Neue Inhalte werden nur aufgen
 Prompt-Dateien folgen dem Muster:
 
 ```text
-<category>-<short-purpose>-v<major>.md
+<category>-<short-purpose>.md
 ```
 
 Beispiele:
 
-- `coding-refactor-plan-v1.md`
-- `summarization-meeting-notes-v2.md`
-- `communication-stakeholder-update-v1.md`
+- `coding-refactor-plan.md`
+- `summarization-meeting-notes.md`
+- `communication-stakeholder-update.md`
 
 Regeln:
 
@@ -23,7 +23,7 @@ Regeln:
 - keine Leerzeichen
 - kurze, sprechende Namen
 - Kategorien muessen zur Taxonomie in `docs/taxonomy.md` passen
-- die Dateiversion spiegelt die Major-Version des Prompts wider
+- der Dateiname bleibt fuer denselben Prompt stabil
 
 ## Pflichtbestandteile jeder Prompt-Datei
 
@@ -94,9 +94,10 @@ Verwende semantisch lesbare Versionen im Inhalt und in den Metadaten:
 
 Konvention:
 
-- der Dateiname enthaelt nur die Major-Version, zum Beispiel `v1`
+- der Dateiname enthaelt keine Versionsangabe
 - die inhaltliche Version in Datei und Metadaten kann `1.2.1` sein
 - jede relevante Aenderung wird im Aenderungsverlauf dokumentiert
+- nur in seltenen Ausnahmefaellen duerfen parallele, inkompatible Varianten als separate Dateien gefuehrt werden
 
 ## Pull-Request-Qualitaetskriterien
 

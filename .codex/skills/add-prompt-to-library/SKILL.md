@@ -121,7 +121,7 @@ These are final curator decisions, not tentative drafting suggestions.
 Filename format must follow:
 
 ```text
-<category>-<short-purpose>-v<major>.md
+<category>-<short-purpose>.md
 ```
 
 Rules:
@@ -130,7 +130,7 @@ Rules:
 - hyphens only
 - no spaces
 - make the purpose human-readable
-- use `v1` for new files unless the user is intentionally creating a new major version
+- keep the filename stable for the same prompt lineage
 
 ### 5. Run the curator pass
 
@@ -239,7 +239,7 @@ When creating a new file, use these defaults unless the user specifies otherwise
 - `created_at` and `updated_at`: use the current date
 - examples should be concrete, not placeholder-only, whenever the request provides enough detail
 
-Derive a stable prompt `id` from the filename stem without the `-v<major>` suffix when possible.
+Derive a stable prompt `id` from the filename stem.
 
 ## Quality bar
 
