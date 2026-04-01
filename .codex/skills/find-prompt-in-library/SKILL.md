@@ -1,6 +1,6 @@
 ---
 name: find-prompt-in-library
-description: Find the best existing prompt file in this prompt library for a concrete problem, task, or desired output. Use when the user wants to know whether the library already has a suitable prompt, which prompt fits best, or what nearby alternatives exist. Do not use to draft a new prompt, make final add-versus-extend-versus-reject curation decisions, or rewrite the library taxonomy.
+description: Librarian Agent skill for finding the best existing prompt file in this prompt library from a few keywords, a brief task description, or a desired output. Use when the user asks to find a prompt for a task, asks which prompt matches given keywords, or wants to know which library prompt fits best. Do not use to draft a new prompt, make final add-versus-extend-versus-reject curation decisions, or rewrite the library taxonomy.
 ---
 
 # Prompt Librarian
@@ -13,6 +13,7 @@ This skill is retrieval and recommendation only. It does not draft new prompt en
 
 Use this skill to:
 
+- interpret a few user keywords as the starting point for prompt retrieval
 - map a concrete problem or task to the best existing prompt file in `prompts/`
 - return the top ranked match plus up to two nearby alternatives
 - explain why a prompt fits or why none fits well enough
@@ -47,11 +48,14 @@ Follow this sequence in order.
 
 Turn the user request into a short retrieval brief with:
 
+- user keywords or short phrases exactly as given
 - core job to be done
 - expected input shape
 - expected output shape
 - likely category
 - meaningful constraints or guardrails
+
+If the request is only a few keywords, expand them into the most likely task framing without pretending the intent is more precise than the evidence supports.
 
 If the request is vague, still extract the likely job, but preserve uncertainty explicitly instead of guessing a stronger fit than the evidence supports.
 
@@ -62,6 +66,8 @@ Search `prompts/**/*.md` heuristically. Compare against:
 - filename
 - YAML frontmatter fields such as `name`, `category`, `tags`, `use_cases`, `input_format`, `output_format`, and `language`
 - prompt body sections such as `Zweck`, `Use Case`, `Eingaben`, `Ausgabeformat`, `Wann verwenden`, and `Wann nicht verwenden`
+
+Start from the user's keywords, then expand semantically to nearby task language if needed. Do not stop at literal keyword hits when the actual workflow match is weak.
 
 Prefer `rg` and targeted file inspection over broad restatement.
 
@@ -76,6 +82,8 @@ Rank candidates in this order:
 3. tags and category fit
 4. wording overlap
 
+Treat keyword overlap as evidence, not as the decision rule.
+
 Return at most three candidates, and only when each one is genuinely plausible for the user's task.
 
 ### 4. Refuse weak matches
@@ -87,6 +95,7 @@ Return `no-suitable-match` when:
 - the expected inputs differ materially
 - the expected output shape differs materially
 - the match depends mostly on vague wording overlap
+- the keywords appear in a prompt but the prompt would lead to the wrong workflow
 
 Do not recommend a prompt that would likely mislead the user into using the wrong workflow.
 
@@ -121,7 +130,7 @@ Explain the strongest evidence for the recommendation in 2 to 4 concise sentence
 
 ### Other Plausible Matches
 
-List up to two additional prompt file paths with one-line reasons, or `none`.
+List up to two additional prompt file paths with one-line reasons, or `none`. Keep these clearly secondary to the best match.
 
 ### How To Use It
 
@@ -142,6 +151,7 @@ Use exactly one of:
 
 Be conservative.
 
+- Use keywords as the entry point, then judge by actual task fit.
 - Prefer `no-suitable-match` over an attractive but misleading near match.
 - Prefer a brief, evidence-based ranking over generic similarity language.
 - Recommend authoring only when the missing use case looks stable enough to document as a reusable prompt.
